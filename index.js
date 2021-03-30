@@ -1,6 +1,8 @@
 const os = require("os")
 const fs = require("fs");
 const express = require("express");
+require("dotenv").config()
+const port = process.env.PORT || 3000;
 const app = express();
 var display = "";
 var arr = [], ary = [];
@@ -33,4 +35,4 @@ app.get("/", (req, res) => {
     })
     res.send(display);
 });
-app.listen(3000, () => console.log("3000 executed"));
+app.listen(port, () => console.log("3000 executed"));
